@@ -1,0 +1,45 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="tests" parallel="tests">
+    <test name="testsChrome" parallel="methods" thread-count="3">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.ClassicBooksPageTests">
+                <methods>
+                    <include name="checkFilteringByAuthorOnProductListingPage"/>
+                </methods>
+            </class>
+            <class name="tests.ProductDetailsPageTests">
+                <methods>
+                    <include name="checkThatUserCanAddProductToTheCart"/>
+                </methods>
+            </class>
+            <class name="tests.WishListTests">
+                <methods>
+                    <include name="checkUserCanAddProductToWishListFromSearchPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="testsFirefox" parallel="methods" thread-count="3">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="tests.ClassicBooksPageTests">
+                <methods>
+                    <include name="checkFilteringByAuthorOnProductListingPage"/>
+                </methods>
+            </class>
+            <class name="tests.ProductDetailsPageTests">
+                <methods>
+                    <include name="checkThatUserCanAddProductToTheCart"/>
+                </methods>
+            </class>
+            <class name="tests.WishListTests">
+                <methods>
+                    <include name="checkUserCanAddProductToWishListFromSearchPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
